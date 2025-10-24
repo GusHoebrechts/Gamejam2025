@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://d10v85i4ne0a1"]
-
-[node name="Player" type="CharacterBody2D"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
