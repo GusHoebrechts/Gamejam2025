@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch2s3lw7ioxer"
-path="res://.godot/imported/Rock2.png-33ff2fefe693a3acb0d152e0746ccc83.ctex"
+uid="uid://db4tid03tegsy"
+path="res://.godot/imported/Double_Jump_Dust_5.png-d87635b4d8785526cc86cde024fd4540.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://free_assests/hero_sprites/2 Owlet_Monster/Rock2.png"
-dest_files=["res://.godot/imported/Rock2.png-33ff2fefe693a3acb0d152e0746ccc83.ctex"]
+source_file="res://free_assests/hero_sprites/Player/Double_Jump_Dust_5.png"
+dest_files=["res://.godot/imported/Double_Jump_Dust_5.png-d87635b4d8785526cc86cde024fd4540.ctex"]
 
 [params]
 

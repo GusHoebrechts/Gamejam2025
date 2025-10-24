@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yp7v2d1diggu"
-path="res://.godot/imported/Owlet_Monster_Throw_4.png-376addd165fa872e8a1a53a7f08671b2.ctex"
+uid="uid://yjwag5pcvbag"
+path="res://.godot/imported/Owlet_Monster_Walk+Attack_6.png-fee042cd6bc3d4b28a0d2eb1c85b923c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://free_assests/hero_sprites/2 Owlet_Monster/Owlet_Monster_Throw_4.png"
-dest_files=["res://.godot/imported/Owlet_Monster_Throw_4.png-376addd165fa872e8a1a53a7f08671b2.ctex"]
+source_file="res://free_assests/hero_sprites/Player/Owlet_Monster_Walk+Attack_6.png"
+dest_files=["res://.godot/imported/Owlet_Monster_Walk+Attack_6.png-fee042cd6bc3d4b28a0d2eb1c85b923c.ctex"]
 
 [params]
 

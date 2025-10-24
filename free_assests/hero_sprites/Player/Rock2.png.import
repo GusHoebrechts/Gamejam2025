@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bifs78jwttk48"
-path="res://.godot/imported/Owlet_Monster_Idle_4.png-a24da06388a83f30eeb47423712cf734.ctex"
+uid="uid://ch2s3lw7ioxer"
+path="res://.godot/imported/Rock2.png-e81ef514e2f7dcf4e633337cb47a7692.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://free_assests/hero_sprites/2 Owlet_Monster/Owlet_Monster_Idle_4.png"
-dest_files=["res://.godot/imported/Owlet_Monster_Idle_4.png-a24da06388a83f30eeb47423712cf734.ctex"]
+source_file="res://free_assests/hero_sprites/Player/Rock2.png"
+dest_files=["res://.godot/imported/Rock2.png-e81ef514e2f7dcf4e633337cb47a7692.ctex"]
 
 [params]
 

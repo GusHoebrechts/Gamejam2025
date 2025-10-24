@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv7bkf3583ilq"
-path="res://.godot/imported/Owlet_Monster.png-b41f38d8a9765d62c872bbb426bd9971.ctex"
+path="res://.godot/imported/Owlet_Monster.png-508d3d2465df58f819250d2e6e67a44f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://free_assests/hero_sprites/2 Owlet_Monster/Owlet_Monster.png"
-dest_files=["res://.godot/imported/Owlet_Monster.png-b41f38d8a9765d62c872bbb426bd9971.ctex"]
+source_file="res://free_assests/hero_sprites/Player/Owlet_Monster.png"
+dest_files=["res://.godot/imported/Owlet_Monster.png-508d3d2465df58f819250d2e6e67a44f.ctex"]
 
 [params]
 
