@@ -3,6 +3,8 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		get_tree().reload_current_scene()
-		#get_tree().change_scene_to_file("res://GUI/main_menu.tscn")
+		call_deferred("_respawn",body)
 		
+func _respawn(player: CharacterBody2D) -> void:
+	player.set_deferred("global_position", teleport.global_position)
+	player.set_deferred("velocity", Vector2.ZERO)

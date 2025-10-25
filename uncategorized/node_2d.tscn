@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://dn10tvdvl08hk"]
+[gd_scene load_steps=71 format=4 uid="uid://dn10tvdvl08hk"]
 
 [ext_resource type="Script" uid="uid://c25a5pjiulfqy" path="res://scripting/player.gd" id="1_3x2eb"]
 [ext_resource type="Texture2D" uid="uid://bifs78jwttk48" path="res://free_assests/hero_sprites/Player/Owlet_Monster_Idle_4.png" id="1_26u7c"]
@@ -13,6 +13,20 @@
 [ext_resource type="Texture2D" uid="uid://bdhkwnsd68dt2" path="res://free_assests/background/background 1/5.png" id="11_hwi2n"]
 [ext_resource type="Texture2D" uid="uid://dnervg3iq3gn4" path="res://free_assests/background/background 1/6.png" id="12_y4vy3"]
 [ext_resource type="Script" uid="uid://balg4g44s6wff" path="res://uncategorized/area_2d.gd" id="13_isf5c"]
+[ext_resource type="Texture2D" uid="uid://b5hq0d3ntksbx" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile075.png" id="14_nccn4"]
+[ext_resource type="Texture2D" uid="uid://cugq8gidv1cjb" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile074.png" id="15_hm4xx"]
+[ext_resource type="Texture2D" uid="uid://dsaqphb3pv8ah" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_activate.png" id="16_gbig5"]
+[ext_resource type="Texture2D" uid="uid://cele4qhskdpl1" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_spikes_activate.png" id="17_gmjwo"]
+[ext_resource type="Texture2D" uid="uid://bokspanwisljr" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_spikes_deactivate.png" id="18_0vtci"]
+[ext_resource type="Texture2D" uid="uid://d3ie7uen51wlc" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_spikes_idle.png" id="19_y817t"]
+[ext_resource type="Texture2D" uid="uid://dqn564fqamget" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_turret.png" id="20_dutlg"]
+[ext_resource type="Texture2D" uid="uid://ydcivlwvxyxg" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile086.png" id="21_sa7n6"]
+[ext_resource type="Texture2D" uid="uid://cneiqlds7nlae" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile055.png" id="22_hospj"]
+[ext_resource type="Texture2D" uid="uid://cysv68ej2gcpw" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile065.png" id="23_3j6yp"]
+[ext_resource type="Texture2D" uid="uid://bhvkkjghv2htc" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile064.png" id="24_k2wbw"]
+[ext_resource type="Texture2D" uid="uid://w6uq2al3m6jd" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile054.png" id="25_sb304"]
+[ext_resource type="Texture2D" uid="uid://hlponorgtpuo" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_idle.png" id="26_s5sbj"]
+[ext_resource type="Texture2D" uid="uid://cohbrcigc47ec" path="res://free_assests/enemies/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_deactivate.png" id="27_424yp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmjwo"]
 atlas = ExtResource("3_g7tt3")
@@ -133,7 +147,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 0.51,
@@ -170,7 +184,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Runninng",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -193,13 +207,19 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walking",
-"speed": 10.0
+"speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcf6w"]
-size = Vector2(13, 24)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isf5c"]
+size = Vector2(11, 20)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g7tt3"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vidtd"]
+radius = 5.0
+height = 20.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_isf5c"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nccn4"]
 texture = ExtResource("5_3x2eb")
 separation = Vector2i(3, 3)
 use_texture_padding = false
@@ -391,29 +411,157 @@ use_texture_padding = false
 
 [sub_resource type="TileSet" id="TileSet_sq44d"]
 physics_layer_0/collision_layer = 1
-sources/3 = SubResource("TileSetAtlasSource_g7tt3")
+sources/3 = SubResource("TileSetAtlasSource_nccn4")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_isf5c"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hm4xx"]
+texture = ExtResource("14_nccn4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gbig5"]
+texture = ExtResource("15_hm4xx")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmjwo"]
+texture = ExtResource("16_gbig5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vtci"]
+texture = ExtResource("17_gmjwo")
+texture_region_size = Vector2i(32, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y817t"]
+texture = ExtResource("18_0vtci")
+texture_region_size = Vector2i(32, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dutlg"]
+texture = ExtResource("19_y817t")
+texture_region_size = Vector2i(32, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sa7n6"]
+texture = ExtResource("20_dutlg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hospj"]
+texture = ExtResource("21_sa7n6")
+texture_region_size = Vector2i(32, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.561203, 7.122404, -3.8579702, 12.8598995, 0.89030075, -12.563132, 1.187067)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3j6yp"]
+texture = ExtResource("22_hospj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2wbw"]
+texture = ExtResource("23_3j6yp")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sb304"]
+texture = ExtResource("24_k2wbw")
+texture_region_size = Vector2i(32, 16)
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5sbj"]
+texture = ExtResource("25_sb304")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_424yp"]
+texture = ExtResource("26_s5sbj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vidtd"]
+texture = ExtResource("27_424yp")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_m0gv3"]
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_hm4xx")
+sources/1 = SubResource("TileSetAtlasSource_gbig5")
+sources/2 = SubResource("TileSetAtlasSource_hospj")
+sources/4 = SubResource("TileSetAtlasSource_3j6yp")
+sources/5 = SubResource("TileSetAtlasSource_k2wbw")
+sources/6 = SubResource("TileSetAtlasSource_sb304")
+sources/7 = SubResource("TileSetAtlasSource_s5sbj")
+sources/8 = SubResource("TileSetAtlasSource_424yp")
+sources/9 = SubResource("TileSetAtlasSource_vidtd")
+sources/10 = SubResource("TileSetAtlasSource_gmjwo")
+sources/11 = SubResource("TileSetAtlasSource_0vtci")
+sources/12 = SubResource("TileSetAtlasSource_y817t")
+sources/13 = SubResource("TileSetAtlasSource_dutlg")
+sources/14 = SubResource("TileSetAtlasSource_sa7n6")
 
 [node name="Node2D" type="Node2D"]
 metadata/_edit_vertical_guides_ = [600.0]
 metadata/_edit_horizontal_guides_ = [180.0]
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("teleport")]
 position = Vector2(110, 69)
 script = ExtResource("1_3x2eb")
+teleport = NodePath("../RespawnPoint")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_j8u3l")
-animation = &"Falling"
-frame_progress = 0.92396545
+animation = &"Runninng"
+frame_progress = 0.5231456
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-1, 4)
-shape = SubResource("RectangleShape2D_vcf6w")
+position = Vector2(-0.5, 6)
+shape = SubResource("RectangleShape2D_isf5c")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
 position = Vector2(-1, 4)
 zoom = Vector2(10, 10)
 limit_right = 600
@@ -491,16 +639,34 @@ offset_right = 494.0
 offset_bottom = 244.0
 texture = ExtResource("12_y4vy3")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="Hitbox" type="Area2D" parent="Player"]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hitbox"]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_vidtd")
+debug_color = Color(0.9846013, 0, 0.34648642, 0.41960785)
+
+[node name="Killbox" type="Area2D" parent="." node_paths=PackedStringArray("teleport")]
+script = ExtResource("13_isf5c")
+teleport = NodePath("../RespawnPoint")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killbox"]
+position = Vector2(0, 180)
+shape = SubResource("WorldBoundaryShape2D_isf5c")
+
+[node name="RespawnPoint" type="Node2D" parent="."]
+position = Vector2(100, 50)
+
+[node name="Ground" type="TileMapLayer" parent="."]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAFAAYAAwACAAAAAAAGAAYAAwACAAAAAAAHAAYAAwADAAAAAAAIAAYAAwADAAAAAAAJAAYAAwACAAAAAAAKAAYAAwACAAAAAAALAAYAAwADAAAAAAAMAAYAAwADAAAAAAAEAAYAAwABAAAAAAACAAUAAwAAAAAAAAAAAAQAAwAAAAAAAAD+/wMAAwAAAAAAAAD8/wIAAwAAAAAAAAD6/wEAAwAAAAAAAAD4/wAAAwAAAAAAAAD2////AwAAAAAAAADy/woAAwAAAAAAAADw/woAAwAAAAAAAADx/woAAwAAAAAAAADq/wgAAwAAAAAAAADr/wgAAwAAAAAAAADs/wgAAwAAAAAAAADt/wgAAwAAAAAAAADr/wcAAwAAAAAAAADr/wYAAwAAAAAAAADr/wUAAwAAAAAAAADs/wYAAwAAAAAAAADs/wcAAwAAAAAAAADt/wcAAwAAAAAAAADu/wgAAwAAAAAAAADv/wgAAwAAAAAAAADp/wgAAwAAAAAAAADo/wgAAwAAAAAAAADn/wgAAwAAAAAAAADm/wgAAwAAAAAAAADl/wgAAwAAAAAAAADk/wgAAwAAAAAAAADn/wUAAwAAAAAAAADk/wUAAwAAAAAAAADj/wgAAwAAAAAAAADi/wgAAwAAAAAAAADh/wgAAwAAAAAAAADg/wgAAwAAAAAAAADf/wgAAwAAAAAAAADe/wgAAwAAAAAAAADh/wUAAwAAAAAAAADq/wcAAwAAAAAAAADq/wYAAwAAAAAAAADp/wcAAwAAAAAAAADd/wUAAwAAAAAAAADd/wYAAwAAAAAAAADd/wcAAwAAAAAAAADd/wgAAwAAAAAAAAANAAYAAwAAAAAAAAAOAAYAAwAAAAAAAAAPAAYAAwAAAAAAAAAQAAYAAwAAAAAAAAARAAYAAwAAAAAAAAASAAYAAwAAAAAAAAATAAYAAwAAAAAAAAAUAAYAAwAAAAAAAAAVAAYAAwAAAAAAAAAWAAYAAwAAAAAAAAAXAAYAAwAAAAAAAAAYAAYAAwAAAAAAAAAMAAUAAwAAAAAAAAAQAAUAAwAAAAAAAAAUAAUAAwAAAAAAAAAYAAUAAwAAAAAAAAAZAAYAAwAAAAAAAAAaAAYAAwAAAAAAAAAbAAYAAwAAAAAAAAAcAAYAAwAAAAAAAAAcAAUAAwAAAAAAAAAdAAYAAwAAAAAAAAAeAAYAAwAAAAAAAAAfAAYAAwAAAAAAAAAgAAYAAwAAAAAAAAAgAAUAAwAAAAAAAAAhAAYAAwAAAAAAAAAiAAYAAwAAAAAAAAAjAAYAAwAAAAAAAAAkAAYAAwAAAAAAAAAkAAUAAwAAAAAAAAANAAQAAwAAAAAAAAAOAAMAAwAAAAAAAAAPAAQAAwAAAAAAAAASAAIAAwAAAAAAAAAWAAIAAwAAAAAAAAAaAAIAAwAAAAAAAAD0//7/AwAAAAAAAADy//3/AwAAAAAAAADw//z/AwAAAAAAAADu//v/AwAAAAAAAADs//r/AwAAAAAAAADq//n/AwAAAAAAAADo//j/AwAAAAAAAADm//f/AwAAAAAAAADk//b/AwAAAAAAAADi//X/AwAAAAAAAADg//T/AwAAAAAAAADe//P/AwAAAAAAAADc//L/AwAAAAAAAADa//H/AwAAAAAAAADY//D/AwAAAAAAAADW/+//AwAAAAAAAADU/+7/AwAAAAAAAAA=")
 tile_set = SubResource("TileSet_sq44d")
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("13_isf5c")
+[node name="Hazards" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAJAAUAAgAAAAEAAAA=")
+tile_set = SubResource("TileSet_m0gv3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 180)
-shape = SubResource("WorldBoundaryShape2D_isf5c")
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Player/Hitbox" to="Player" method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Killbox" to="Killbox" method="_on_body_entered"]

@@ -1,18 +1,20 @@
 extends CharacterBody2D
 
-
+@export var teleport:Node2D
 const SPEED = 145.0
-const JUMP_VELOCITY = -220.0
-const Coyote_Time = 0.16
-const Buffer_Time = 0.16
+
+const JUMP_VELOCITY = -230.0
+const Coyote_Time = 0.1
+const Buffer_Time = 0.1
 const Snap_Len = 8
 
 
-enum State{Idle,Run,Walking,Jumping, Falling}
+enum State{Idle,Running,Walking,Jumping, Falling}
 
 var state: State=State.Idle
 var Coyote_Left = 0
 var Buffer_Left = 0
+var SpeedMult = 1
 
 func _ready() -> void:
 	floor_snap_length=Snap_Len
@@ -44,8 +46,12 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = direction * SPEED
 		state=State.Walking
+		if Input.is_action_pressed("Run"):
+			SpeedMult= 1.3
+			state=State.Running
+		else: SpeedMult=1
+		velocity.x = direction * SPEED *SpeedMult
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		state=State.Idle
@@ -77,4 +83,16 @@ func _physics_process(delta: float) -> void:
 				$AnimatedSprite2D.flip_h = true
 			if velocity.x>0:
 				$AnimatedSprite2D.flip_h = false
+		State.Running:
+			$AnimatedSprite2D.play("Runninng")
+			print("Running")
+			if velocity.x<0:
+				$AnimatedSprite2D.flip_h = true
+			if velocity.x>0:
+				$AnimatedSprite2D.flip_h = false
 		
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	global_position=teleport.global_position
+	velocity=Vector2.ZERO
