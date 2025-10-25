@@ -1,10 +1,23 @@
-[gd_scene load_steps=27 format=3 uid="uid://dn10tvdvl08hk"]
+[gd_scene load_steps=33 format=4 uid="uid://dn10tvdvl08hk"]
 
 [ext_resource type="Script" uid="uid://c25a5pjiulfqy" path="res://scripting/player.gd" id="1_3x2eb"]
 [ext_resource type="Texture2D" uid="uid://bifs78jwttk48" path="res://free_assests/hero_sprites/Player/Owlet_Monster_Idle_4.png" id="1_26u7c"]
 [ext_resource type="Texture2D" uid="uid://d32a7b3fbd28l" path="res://free_assests/hero_sprites/Player/Owlet_Monster_Run_6.png" id="2_4lh1o"]
 [ext_resource type="Texture2D" uid="uid://c5mygqbrq70vp" path="res://free_assests/hero_sprites/Player/Owlet_Monster_Walk_6.png" id="3_3x2eb"]
+[ext_resource type="Texture2D" uid="uid://cmixced0nlxt3" path="res://free_assests/hero_sprites/Player/Owlet_Monster_Jump_8.png" id="3_g7tt3"]
 [ext_resource type="Texture2D" uid="uid://bduffd7nw0wk2" path="res://free_assests/tilemap/tilemap.png" id="5_3x2eb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmjwo"]
+atlas = ExtResource("3_g7tt3")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vtci"]
+atlas = ExtResource("3_g7tt3")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y817t"]
+atlas = ExtResource("3_g7tt3")
+region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g7tt3"]
 atlas = ExtResource("1_26u7c")
@@ -20,6 +33,18 @@ region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjet5"]
 atlas = ExtResource("1_26u7c")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8u3l"]
+atlas = ExtResource("3_g7tt3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcf6w"]
+atlas = ExtResource("3_g7tt3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f5ej"]
+atlas = ExtResource("3_g7tt3")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vefyx"]
@@ -74,6 +99,20 @@ region = Rect2(160, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gmjwo")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_0vtci")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_y817t")
+}],
+"loop": true,
+"name": &"Falling",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_g7tt3")
 }, {
 "duration": 1.0,
@@ -88,6 +127,20 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_j8u3l")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_vcf6w")
+}, {
+"duration": 20.0,
+"texture": SubResource("AtlasTexture_7f5ej")
+}],
+"loop": true,
+"name": &"Jumping",
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -132,7 +185,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_861bd")
 }],
 "loop": true,
-"name": &"Walk",
+"name": &"Walking",
 "speed": 20.0
 }]
 
@@ -144,9 +197,13 @@ texture = ExtResource("5_3x2eb")
 separation = Vector2i(3, 3)
 use_texture_padding = false
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:0/0 = 0
 5:0/0 = 0
 6:0/0 = 0
@@ -162,9 +219,6 @@ use_texture_padding = false
 16:0/0 = 0
 17:0/0 = 0
 18:0/0 = 0
-20:0/0 = 0
-21:0/0 = 0
-22:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -185,9 +239,6 @@ use_texture_padding = false
 17:1/0 = 0
 18:1/0 = 0
 19:1/0 = 0
-20:1/0 = 0
-21:1/0 = 0
-22:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -208,9 +259,6 @@ use_texture_padding = false
 17:2/0 = 0
 18:2/0 = 0
 19:2/0 = 0
-20:2/0 = 0
-21:2/0 = 0
-22:2/0 = 0
 0:3/0 = 0
 1:3/0 = 0
 2:3/0 = 0
@@ -231,9 +279,6 @@ use_texture_padding = false
 17:3/0 = 0
 18:3/0 = 0
 19:3/0 = 0
-20:3/0 = 0
-21:3/0 = 0
-22:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -254,9 +299,6 @@ use_texture_padding = false
 17:4/0 = 0
 18:4/0 = 0
 19:4/0 = 0
-20:4/0 = 0
-21:4/0 = 0
-22:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -277,12 +319,10 @@ use_texture_padding = false
 17:5/0 = 0
 18:5/0 = 0
 19:5/0 = 0
-20:5/0 = 0
-21:5/0 = 0
-22:5/0 = 0
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:6/0 = 0
 4:6/0 = 0
 5:6/0 = 0
@@ -300,9 +340,6 @@ use_texture_padding = false
 17:6/0 = 0
 18:6/0 = 0
 19:6/0 = 0
-20:6/0 = 0
-21:6/0 = 0
-22:6/0 = 0
 0:7/0 = 0
 1:7/0 = 0
 2:7/0 = 0
@@ -323,9 +360,6 @@ use_texture_padding = false
 17:7/0 = 0
 18:7/0 = 0
 19:7/0 = 0
-20:7/0 = 0
-21:7/0 = 0
-22:7/0 = 0
 0:8/0 = 0
 1:8/0 = 0
 2:8/0 = 0
@@ -346,41 +380,15 @@ use_texture_padding = false
 17:8/0 = 0
 18:8/0 = 0
 19:8/0 = 0
-20:8/0 = 0
-21:8/0 = 0
-22:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-11:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-16:9/0 = 0
-17:9/0 = 0
-18:9/0 = 0
-19:9/0 = 0
-20:9/0 = 0
-21:9/0 = 0
-22:9/0 = 0
 19:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_sq44d"]
+physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_g7tt3")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3x2eb"]
-size = Vector2(46, 14)
-
 [node name="Node2D" type="Node2D"]
+metadata/_edit_vertical_guides_ = [600.0]
+metadata/_edit_horizontal_guides_ = [180.0]
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(110, 69)
@@ -389,20 +397,20 @@ script = ExtResource("1_3x2eb")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_j8u3l")
-animation = &"Idle"
-frame_progress = 0.6309133
+animation = &"Jumping"
+frame_progress = 0.7384445
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-1, 4)
 shape = SubResource("RectangleShape2D_vcf6w")
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-1, 4)
+zoom = Vector2(3, 3)
+limit_right = 600
+limit_bottom = 180
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
-tile_map_data = PackedByteArray(0, 0, 6, 0, 6, 0, 3, 0, 1, 0, 0, 0, 0, 0, 7, 0, 6, 0, 3, 0, 2, 0, 0, 0, 0, 0, 8, 0, 6, 0, 3, 0, 3, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAFAAYAAwACAAAAAAAGAAYAAwACAAAAAAAHAAYAAwADAAAAAAAIAAYAAwADAAAAAAAJAAYAAwACAAAAAAAKAAYAAwACAAAAAAALAAYAAwADAAAAAAAMAAYAAwADAAAAAAAEAAYAAwABAAAAAAANAAMAAwAAAAAAAAAQAAIAAwAAAAAAAAACAAUAAwAAAAAAAAAAAAQAAwAAAAAAAAD+/wMAAwAAAAAAAAD8/wIAAwAAAAAAAAD6/wEAAwAAAAAAAAD4/wAAAwAAAAAAAAD2////AwAAAAAAAADy/woAAwAAAAAAAADw/woAAwAAAAAAAADx/woAAwAAAAAAAADq/wgAAwAAAAAAAADr/wgAAwAAAAAAAADs/wgAAwAAAAAAAADt/wgAAwAAAAAAAADr/wcAAwAAAAAAAADr/wYAAwAAAAAAAADr/wUAAwAAAAAAAADs/wYAAwAAAAAAAADs/wcAAwAAAAAAAADt/wcAAwAAAAAAAADu/wgAAwAAAAAAAADv/wgAAwAAAAAAAADp/wgAAwAAAAAAAADo/wgAAwAAAAAAAADn/wgAAwAAAAAAAADm/wgAAwAAAAAAAADl/wgAAwAAAAAAAADk/wgAAwAAAAAAAADn/wUAAwAAAAAAAADk/wUAAwAAAAAAAADj/wgAAwAAAAAAAADi/wgAAwAAAAAAAADh/wgAAwAAAAAAAADg/wgAAwAAAAAAAADf/wgAAwAAAAAAAADe/wgAAwAAAAAAAADh/wUAAwAAAAAAAADq/wcAAwAAAAAAAADq/wYAAwAAAAAAAADp/wcAAwAAAAAAAADd/wUAAwAAAAAAAADd/wYAAwAAAAAAAADd/wcAAwAAAAAAAADd/wgAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_sq44d")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
-position = Vector2(121, 105)
-shape = SubResource("RectangleShape2D_3x2eb")
