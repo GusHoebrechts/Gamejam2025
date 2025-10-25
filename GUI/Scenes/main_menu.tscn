@@ -1,12 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cslfbkqww26qn"]
+[gd_scene load_steps=8 format=3 uid="uid://cq70ixibokabv"]
 
-[ext_resource type="Texture2D" path="res://GUI/Title.png" id="1_kf0uv"]
-[ext_resource type="Texture2D" path="res://GUI/NewGameUnselected.png" id="2_38be4"]
-[ext_resource type="Texture2D" path="res://GUI/NewGameSelected.png" id="3_exjve"]
-[ext_resource type="Texture2D" path="res://GUI/Exit.png" id="3_rhcmj"]
-[ext_resource type="Script" path="res://GUI/new_game_button.gd" id="4_w0c01"]
-[ext_resource type="Texture2D" path="res://GUI/ExitSelected.png" id="5_s7n8e"]
-[ext_resource type="Script" path="res://GUI/exit_button.gd" id="7_5hhdc"]
+[ext_resource type="Texture2D" uid="uid://chyqcjnyohc06" path="res://GUI/assets/Title.png" id="1_kf0uv"]
+[ext_resource type="Texture2D" uid="uid://d35nkcd7tw7sf" path="res://GUI/assets/NewGameUnselected.png" id="2_38be4"]
+[ext_resource type="Texture2D" uid="uid://d5tvvl7pt0sn" path="res://GUI/assets/NewGameSelected.png" id="3_exjve"]
+[ext_resource type="Texture2D" uid="uid://c6jxaco4amde3" path="res://GUI/assets/Exit.png" id="3_rhcmj"]
+[ext_resource type="Script" uid="uid://c78sxxli7gji0" path="res://GUI/new_game_button.gd" id="4_w0c01"]
+[ext_resource type="Texture2D" uid="uid://cs2wajhowdmrt" path="res://GUI/assets/ExitSelected.png" id="5_s7n8e"]
+[ext_resource type="Script" uid="uid://tqugx8jltfb6" path="res://GUI/exit_button.gd" id="7_5hhdc"]
 
 [node name="MarginContainer" type="MarginContainer"]
 z_index = -1

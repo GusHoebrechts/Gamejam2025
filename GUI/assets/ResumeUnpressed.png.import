@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d5tvvl7pt0sn"
-path="res://.godot/imported/NewGameSelected.png-3e839a3eda81a6f91c30bc4e352fffee.ctex"
+uid="uid://b7k0y2f2ltntk"
+path="res://.godot/imported/ResumeUnpressed.png-976637ff2121c914e06b9e1eb3c8ba52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GUI/NewGameSelected.png"
-dest_files=["res://.godot/imported/NewGameSelected.png-3e839a3eda81a6f91c30bc4e352fffee.ctex"]
+source_file="res://GUI/assets/ResumeUnpressed.png"
+dest_files=["res://.godot/imported/ResumeUnpressed.png-976637ff2121c914e06b9e1eb3c8ba52.ctex"]
 
 [params]
 
