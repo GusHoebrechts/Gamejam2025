@@ -17,6 +17,7 @@ var Buffer_Left = 0
 func _ready() -> void:
 	floor_snap_length=Snap_Len
 
+
 func _physics_process(delta: float) -> void:
 	#Timers
 	if(is_on_floor()):
