@@ -59,20 +59,20 @@ func _physics_process(delta: float) -> void:
 	match state:	
 		State.Idle:
 			$AnimatedSprite2D.play("Idle")
-			print("Idle")
 		State.Walking:
 			$AnimatedSprite2D.play("Walking")
-			print("Walking")
 			if velocity.x<0:
 				$AnimatedSprite2D.flip_h = true
 			if velocity.x>0:
 				$AnimatedSprite2D.flip_h = false
 		State.Jumping:
 			$AnimatedSprite2D.play("Jumping")
-			print("Jumping")
+			if velocity.x<0:
+				$AnimatedSprite2D.flip_h = true
+			if velocity.x>0:
+				$AnimatedSprite2D.flip_h = false
 		State.Falling:
 			$AnimatedSprite2D.play("Falling")
-			print("Falling")
 			if velocity.x<0:
 				$AnimatedSprite2D.flip_h = true
 			if velocity.x>0:
