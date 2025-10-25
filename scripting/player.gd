@@ -1,20 +1,44 @@
 extends CharacterBody2D
 
 
-const SPEED = 190.0
+const SPEED = 145.0
 const JUMP_VELOCITY = -220.0
+const Coyote_Time = 0.16
+const Buffer_Time = 0.16
+const Snap_Len = 8
+
 
 enum State{Idle,Run,Walking,Jumping, Falling}
-var state: State=State.Idle
 
+var state: State=State.Idle
+var Coyote_Left = 0
+var Buffer_Left = 0
+
+func _ready() -> void:
+	floor_snap_length=Snap_Len
 
 func _physics_process(delta: float) -> void:
+	#Timers
+	if(is_on_floor()):
+		Coyote_Left=Coyote_Time
+	else:
+		Coyote_Left = max(Coyote_Left - delta, 0.0)
+	if(Input.is_action_just_pressed("ui_accept")):
+		Buffer_Left = Buffer_Time 
+	else:
+		Buffer_Left= max(Buffer_Left - delta, 0.0)
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		state=State.Jumping
+	if Input.is_action_pressed("ui_accept") and (Buffer_Left>0 and Coyote_Left >0):
+		velocity.y = JUMP_VELOCITY
+		Buffer_Left=0
+		Coyote_Left=0
 		state=State.Jumping
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
